@@ -73,17 +73,23 @@ whether there are permutation matrices $\mathbf U^N$ for arbitrarily large $N$ s
   \bigl\|P(\mathbf U^N,\mathbf U^{N*})|_{H_N}\bigr\|\le\|P(\mathbf u,\mathbf u^*)\|
 \end{equation}
 for every polynomial $P$ of degree at most $q(N)$, where $q(N)\to\infty$ sufficiently slowly. He observes that
-\eqref{eq:vh} cannot hold for all polynomials in a fixed dimension, since the reduced group $C^*$-algebra of
+\eqref{eq:vh} cannot hold for all polynomials when $N$ is fixed, since the reduced group $C^*$-algebra of
 $\mathbf F_r$ would then embed in the $N\times N$ matrices, and writes that he is not aware of an obstruction under a
 degree bound. He also poses the weaker question in which $\mathbf U^N$ may depend on the polynomial $P$.
 
-The obstruction in a fixed dimension uses all polynomials at once and gives no bound on the degree.
-O'Donnell and Wu \cite{OW} construct deterministic permutation tuples that satisfy \eqref{eq:vh} up to an additive
-error. Alev and Rao \cite{AR} obtain by a covering argument deterministic spectral lower bounds, with an error term
-that tends to zero, for polynomials with nonnegative coefficients evaluated on permutation conjugates of regular
-graph adjacency matrices. Polynomials of degree zero satisfy \eqref{eq:vh} with equality.
+The obstruction for fixed $N$ uses all polynomials at once and gives no bound on the degree.
+For a fixed self-adjoint polynomial $P$ and $\varepsilon>0$, O'Donnell and Wu \cite{OW} construct explicit
+permutation tuples of arbitrarily large size at which the spectrum of $P(\mathbf U^N,\mathbf U^{N*})|_{H_N}$ lies
+within Hausdorff distance $\varepsilon$ of the spectrum of $P(\mathbf u,\mathbf u^*)$, so that $P$ satisfies
+\eqref{eq:vh} up to the additive error $\varepsilon$ at a tuple chosen for $P$ and $\varepsilon$. Alev and Rao
+\cite[Theorem~5.5]{AR} prove, for a fixed polynomial $Q$ with nonnegative coefficients evaluated at adjacency
+matrices of regular graphs of bounded degree conjugated by permutation matrices, that the norm on $H_N$ is at least
+the norm of $Q$ at free copies of the adjacency operators of the corresponding regular trees, minus an error that
+tends to zero as $N\to\infty$.
 
-Degree one already fails, for every $N\ge 2$ and every tuple. Put $n=N-1$. For indices $i\ne j$, a complex
+The inequality \eqref{eq:vh} holds with equality for polynomials of degree zero. It fails already for polynomials
+of degree one, for every $N\ge 2$ and every tuple. Put $n=N-1$ and write $\mathbf U=(U_1,\dots,U_r)$ for
+$\mathbf U^N$. For indices $i\ne j$, a complex
 number $z$ with $|z|=1$, a sign $\sigma\in\{1,-1\}$ and $t>0$ let
 \begin{equation}\label{eq:P}
   P=\bar z\,x_i+z\,x_i^*+\sigma t\,(x_j+x_j^*),
@@ -95,8 +101,8 @@ The free norm of $P$ does not depend on $i$, $j$, $z$ or $\sigma$ (\Cref{lem:pha
 \end{equation}
 (\Cref{lem:free}). The exact value is given by the formula of Akemann and Ostrand \cite{AO} for weighted sums of
 free generators, in the form stated by Bordenave and Lacoin \cite[(62)]{BL}; \Cref{lem:free} proves the upper
-bound by a weighted Schur test. For any two $N\times N$ permutation matrices, one of them, $C$, has an eigenvector
-$v\in H_N$ of norm one, $Cv=zv$, at which the other, $D$, satisfies
+bound by a weighted Schur test. For any two $N\times N$ permutation matrices, one of them, $C$, has a unit eigenvector
+$v\in H_N$, $Cv=zv$, at which the other, $D$, satisfies
 \[
   |\operatorname{Re}\langle v,Dv\rangle|\ \ge\ \frac1n
 \]
@@ -104,8 +110,11 @@ $v\in H_N$ of norm one, $Cv=zv$, at which the other, $D$, satisfies
 \[
   \langle v,P(\mathbf U,\mathbf U^*)v\rangle=2+2t\,|\operatorname{Re}\langle v,Dv\rangle|\ \ge\ 2+\frac{2t}n ,
 \]
-and $2t/n>2t^{4/3}$ when $t<n^{-3}$. The gap is then positive for every $N\ge 2$, with no error term. The
-coefficients $\bar z$, $z$ and $\sigma t$ need not be nonnegative.
+and $2t/n>2t^{4/3}$ when $t<n^{-3}$. The gap is then positive for every $N\ge 2$. In \cite{AR} the norm on $H_N$ is
+bounded below by the free norm minus an error term, for a fixed polynomial with nonnegative coefficients; here it is
+bounded below by the free norm plus $1/(4n^4)$, for a polynomial that depends on the tuple and whose coefficients
+$\bar z$, $z$ and $\sigma t$ need not be nonnegative. In \cite{OW} the polynomial is fixed and the tuple is chosen
+for it; here the tuple is arbitrary and the polynomial is chosen for it.
 
 \begin{theorem}\label{thm:main}
 Let $N\ge 2$, $r\ge 2$ and $n=N-1$, and let $\mathbf U=(U_1,\dots,U_r)$ be $N\times N$ permutation matrices.
@@ -210,6 +219,8 @@ $\mathbf F_2$, with $g_i,g_j$ in place of $a,b$. Hence the norm equals $\|T_t\|$
 \section{The finite side}\label{sec:finite}
 
 This section bounds the norm of $P(\mathbf U,\mathbf U^*)$ on $H_N$ from below and proves \Cref{thm:main}.
+A permutation matrix $U$ permutes the basis vectors $\delta_x$ of $\mathbb C^N$; a fixed point or a cycle of $U$
+is a fixed point or a cycle of this permutation.
 
 \begin{lemma}\label{lem:finite}
 Let $N\ge 2$ and let $A,B$ be $N\times N$ permutation matrices. There are an ordering $(C,D)$ of $(A,B)$, a
@@ -220,7 +231,7 @@ unit vector $v\in H_N$ and a complex number $z$ with $|z|=1$ such that
 \end{lemma}
 
 \begin{proof}
-Suppose first that one of the two permutations, call it $C$, fixes a point $x$, and let $D$ be the other. Put
+Suppose first that one of the two matrices, call it $C$, fixes a point $x$, and let $D$ be the other. Put
 \[
   v=\Bigl(1-\frac1N\Bigr)^{-1/2}\Bigl(\delta_x-\frac1N\one\Bigr).
 \]
@@ -231,7 +242,7 @@ $D$ fixes $x$ and $0$ otherwise,
 \]
 which equals $1$ or $-1/n$.
 
-Suppose now that neither permutation has a fixed point. The restriction $A|_{H_N}$ is unitary; let
+Suppose now that neither matrix has a fixed point. The restriction $A|_{H_N}$ is unitary; let
 $v_1,\dots,v_n$ be an orthonormal basis of $H_N$ consisting of its eigenvectors. Then
 \[
   \sum_{k=1}^n\operatorname{Re}\langle v_k,Bv_k\rangle=\operatorname{Re}\operatorname{Tr}\bigl(B|_{H_N}\bigr)
@@ -263,13 +274,14 @@ $\sum_{k=1}^Nk=N(N+1)/2$ roots of unity of order at most $N$, two choices of $(i
 \end{proof}
 
 \begin{remark}\label{rem:example}
-For $N=3$ let $C$ be the transposition of $1$ and $2$ (fixing $0$) and $D$ the cycle $0\to1\to2\to0$. Take
+For $N=3$ let $C$ be the matrix of the transposition of $1$ and $2$ (fixing $0$) and $D$ the matrix of the
+cycle $0\to1\to2\to0$. Take
 $\mathbf U=(C,D)$, $t=1/16$ and $P=x_1+x_1^*-t(x_2+x_2^*)$, the polynomial \eqref{eq:P} with $z=1$ and $\sigma=-1$.
 On $H_3$ we have $D+D^*=-I$, so $P(\mathbf U,\mathbf U^*)$ acts there as $2C+1/16$: the vector $(2,-1,-1)$ is an
 eigenvector with eigenvalue $33/16$ and $(0,1,-1)$ is one with eigenvalue $-31/16$, and
 $\|P(\mathbf U,\mathbf U^*)|_{H_3}\|=33/16$. \Cref{lem:phase} and \Cref{lem:free} with $s=1/4$ give
-$\|P(\mathbf u,\mathbf u^*)\|\le 131/64$, so the gap is at least $1/64$. For the same two permutations the
-adjacency operator $C+C^*+D+D^*$ has norm $3<2\sqrt3$ on $H_3$, so the corresponding $4$-regular graph is Ramanujan.
+$\|P(\mathbf u,\mathbf u^*)\|\le 131/64$, so the gap is at least $1/64$. For the same two matrices the
+adjacency matrix $C+C^*+D+D^*$ has norm $3<2\sqrt3$ on $H_3$, so the corresponding $4$-regular graph is Ramanujan.
 \end{remark}
 
 \section*{Acknowledgments and funding}
