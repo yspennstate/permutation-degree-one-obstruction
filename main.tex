@@ -46,8 +46,8 @@ from an explicit set of at most $2N(N+1)$ polynomials that depends only on $N$.
 Let $r\ge 2$, let $g_1,\dots,g_r$ be free generators of the free group $\mathbf F_r$, and let $u_i=\lambda(g_i)$,
 where $\lambda$ is the left regular representation on $\ell^2(\mathbf F_r)$. For an $r$-tuple
 $\mathbf U^N=(U_1^N,\dots,U_r^N)$ of $N\times N$ permutation matrices write $H_N=\one^\perp\subset\mathbb C^N$ for
-the orthogonal complement of the constant vector; every permutation matrix and its adjoint preserve $H_N$. For a
-noncommutative polynomial $P$ in the variables $x_1,\dots,x_r,x_1^*,\dots,x_r^*$ we write
+the orthogonal complement of the constant vector $\one=(1,\dots,1)$; every permutation matrix and its adjoint preserve $H_N$. For a
+noncommutative polynomial $P$ with complex coefficients in the variables $x_1,\dots,x_r,x_1^*,\dots,x_r^*$ we write
 $P(\mathbf U^N,\mathbf U^{N*})$ and $P(\mathbf u,\mathbf u^*)$ for the operators obtained by substituting
 $U_i^N,U_i^{N*}$, respectively $u_i,u_i^*$, for $x_i,x_i^*$. We call $\|P(\mathbf u,\mathbf u^*)\|$ the \emph{free
 norm} of $P$.
@@ -55,17 +55,23 @@ Bordenave and Collins \cite{BC} proved that for independent uniformly random per
 \[
   \lim_{N\to\infty}\bigl\|P(\mathbf U^N,\mathbf U^{N*})|_{H_N}\bigr\|=\|P(\mathbf u,\mathbf u^*)\|
 \]
-in probability, for every polynomial $P$ with matrix coefficients. This is the \emph{strong convergence} of
+in probability, and the same holds for every polynomial $P$ whose coefficients are $d\times d$ matrices, for every
+$d$, with the tensor product $\mathbb C^d\otimes H_N$ in place of $H_N$. This is the \emph{strong convergence} of
 $\mathbf U^N|_{H_N}$ to $\mathbf u$. For the single polynomial $x_1+x_1^*+\dots+x_r+x_r^*$ the left side is the
 norm on $H_N$ of the adjacency matrix of a $2r$-regular graph, and the free norm is $2\sqrt{2r-1}$, the norm of the
-adjacency operator of the $2r$-regular tree. For this polynomial the theorem of Bordenave and Collins is Friedman's
+adjacency operator of the $2r$-regular tree \cite{Ke}. For this polynomial the theorem of Bordenave and Collins is Friedman's
 theorem \cite{Fr} for this model of random $2r$-regular graphs: the norm of the adjacency matrix on $H_N$ tends to
 $2\sqrt{2r-1}$ in probability.
 A $d$-regular graph on $N$ vertices whose adjacency matrix has norm at most $2\sqrt{d-1}$ on $H_N$ is a Ramanujan
 graph; such graphs exist for infinitely many degrees by the constructions of Lubotzky, Phillips and Sarnak
 \cite{LPS} and of Margulis \cite{Ma}. A bipartite $d$-regular graph has the eigenvalue $-d$ on $H_N$; the bipartite
 Ramanujan graphs of every degree of Marcus, Spielman and Srivastava \cite{MSS} satisfy the bound $2\sqrt{d-1}$ for
-the remaining eigenvalues.
+the remaining eigenvalues. Mohanty and O'Donnell \cite[Theorem~8.1 and Appendix~B]{MO} extend the method of
+\cite{MSS} to sums of fixed finite graphs on a common vertex set: for every $N$ they obtain, by permuting $N$ copies
+of each graph, an $N$-fold lift of the sum whose new eigenvalues, those not already eigenvalues of the base graph, are at most the spectral
+radius of the corresponding infinite graph. Hall, Puder and Sawin \cite{HPS} prove the same bound for $N$-fold lifts
+of every connected finite graph without loops. These bounds have no error term and are one-sided: they bound the
+largest new eigenvalue, not the norm.
 
 Van Handel \cite[Section~6.5]{vH} asks whether the strong convergence phenomenon has a Ramanujan form, namely
 whether there are permutation matrices $\mathbf U^N$ for arbitrarily large $N$ such that
@@ -75,13 +81,15 @@ whether there are permutation matrices $\mathbf U^N$ for arbitrarily large $N$ s
 for every polynomial $P$ of degree at most $q(N)$, where $q(N)\to\infty$ sufficiently slowly. He observes that
 \eqref{eq:vh} cannot hold for all polynomials when $N$ is fixed, since the reduced group $C^*$-algebra of
 $\mathbf F_r$ would then embed in the $N\times N$ matrices, and writes that he is not aware of an obstruction under a
-degree bound. He also poses the weaker question in which $\mathbf U^N$ may depend on the polynomial $P$.
+degree bound. He also poses the weaker question in which $\mathbf U^N$ may depend on the polynomial $P$. A
+negative answer for polynomials with complex coefficients, as below, is also one for polynomials with matrix
+coefficients.
 
 The obstruction for fixed $N$ uses all polynomials at once and gives no bound on the degree.
-O'Donnell and Wu \cite[Theorem~10.13]{OW} fix a degree $k$, a bound $R$ on the coefficients and
-$\varepsilon>0$. For every $N$ they construct an explicit tuple $\mathbf U^{N'}$ of $N'\times N'$ permutation
-matrices, with $N\le N'\le N+o(N)$ as $N\to\infty$, that serves every self-adjoint polynomial $P$ of degree at most $k$ with
-coefficients bounded by $R$ at once: the spectrum of $P(\mathbf U^{N'},\mathbf U^{N'*})|_{H_{N'}}$ lies within
+O'Donnell and Wu \cite[Theorem~10.13]{OW} fix a degree $k$, a size for matrix coefficients, a bound $R$ on
+their norms and $\varepsilon>0$. For every $N$ they construct an explicit tuple $\mathbf U^{N'}$ of $N'\times N'$ permutation
+matrices, with $N\le N'\le N+o(N)$ as $N\to\infty$. For every self-adjoint polynomial $P$ of degree at most $k$ with
+matrix coefficients of that size and norm at most $R$, the spectrum of $P(\mathbf U^{N'},\mathbf U^{N'*})|_{H_{N'}}$ lies within
 Hausdorff distance $\varepsilon$ of the spectrum of $P(\mathbf u,\mathbf u^*)$. So all these polynomials satisfy \eqref{eq:vh} up to the additive error
 $\varepsilon$ at one tuple. Alev and Rao \cite[Theorem~5.5]{AR} take a fixed polynomial $Q$ with nonnegative
 coefficients and evaluate it at adjacency matrices of regular graphs of bounded degree, each conjugated by a
@@ -115,8 +123,8 @@ $v\in H_N$, $Cv=zv$, at which the other, $D$, satisfies
 and $2t/n>2t^{4/3}$ when $t<n^{-3}$. The gap is then positive for every $N\ge 2$. In the theorem of Alev and Rao the norm on $H_N$ is
 bounded below by the free norm minus an error term, for a fixed polynomial with nonnegative coefficients. Here it
 is bounded below by the free norm plus $1/(4n^4)$, for a polynomial that depends on the tuple and whose
-coefficients $\bar z$, $z$ and $\sigma t$ need not be nonnegative. In the theorem of O'Donnell and Wu one tuple serves all polynomials
-of bounded degree and bounded coefficients up to the error $\varepsilon$; here no tuple serves all polynomials of
+coefficients $\bar z$, $z$ and $\sigma t$ need not be nonnegative. In the theorem of O'Donnell and Wu one tuple satisfies \eqref{eq:vh} up to the error $\varepsilon$ for all
+polynomials of bounded degree and bounded coefficients; here no tuple satisfies \eqref{eq:vh} for all polynomials of
 degree one with no error.
 
 \begin{theorem}\label{thm:main}
@@ -145,20 +153,22 @@ $\|P(\mathbf U,\mathbf U^*)|_{H_N}\|\ge\|P(\mathbf u,\mathbf u^*)\|+1/(4n^4)$.
 \item The lower bound $1/(4n^4)$ for the gap tends to zero, so \Cref{thm:main} is consistent with strong convergence and with the
 constructions of \cite{OW}. For $t=1/(2n^3)$ the coefficients of \eqref{eq:P} have $\ell^1$ norm $2+2t\le 3$, so
 after normalization the gap is at least $1/(12n^4)$.
-\item For $r=1$ the inequality \eqref{eq:vh} holds for every Laurent polynomial $P$ and every unitary matrix $U$:
-the spectrum of $U$ lies on the unit circle, so $\|P(U,U^*)\|=\max_{\zeta\in\operatorname{spec}U}|P(\zeta,\bar\zeta)|
+\item For $r=1$ let $u$ be the shift on $\ell^2(\mathbb Z)$. For every Laurent polynomial $P$ and every unitary
+matrix $U$ the spectrum of $U$ lies on the unit circle, so $\|P(U,U^*)\|=\max_{\zeta\in\operatorname{spec}U}|P(\zeta,\bar\zeta)|
 \le\max_{|\zeta|=1}|P(\zeta,\bar\zeta)|=\|P(u,u^*)\|$, the last equality by the Fourier transform on $\ell^2(\mathbb Z)$.
-So two generators are needed.
-\item The proof of \Cref{lem:finite} uses that a permutation matrix fixes $\one$ and that its trace is the number
-of its fixed points. In \Cref{thm:main} the polynomial is
-chosen after the tuple; the weaker question, in which the tuple is chosen after the polynomial, is not settled by it.
+In particular \eqref{eq:vh} holds for every permutation matrix, since its norm on $H_N$ is at most its norm. So two
+generators are needed.
+\item In \Cref{thm:main} the polynomial is chosen after the tuple; the weaker question, in which the tuple is chosen
+after the polynomial, is not settled by it. The theorems of \cite{MO} and \cite{HPS} are positive results of this
+weaker kind for adjacency matrices of graphs, whose coefficients are nonnegative, and for the largest eigenvalue
+on the complement of the old eigenvectors rather than for the norm.
 \end{enumerate}
 \end{remark}
 
 
 \section{The free side}\label{sec:free}
 
-This section bounds the free norm of the polynomial \eqref{eq:P}. Let $a,b$ be free generators of $\mathbf F_2$
+Let $a,b$ be free generators of $\mathbf F_2$
 and, for $t>0$,
 \[
   T_t=\lambda(a)+\lambda(a)^*+t\bigl(\lambda(b)+\lambda(b)^*\bigr),
@@ -180,7 +190,9 @@ $\rho_b^{-1}=(\sqrt{s^2+4t^2}+s)/(2t)$, so that
 \begin{equation}\label{eq:rho}
   \rho_a^{-1}-\rho_a=s,\qquad t\,(\rho_b^{-1}-\rho_b)=s .
 \end{equation}
-Join each $w\in\mathbf F_2$ to $gw$ for $g\in\{a^{\pm1},b^{\pm1}\}$; this graph is a $4$-regular tree. Give the
+Let $e$ be the identity of $\mathbf F_2$. Join each $w\in\mathbf F_2$ to $gw$ for $g\in\{a^{\pm1},b^{\pm1}\}$; this
+graph is a $4$-regular tree, which we root at $e$. For $w\ne e$ the parent of $w$ is the word obtained by deleting
+the first letter of the reduced word $w$. Give the
 edge $\{w,gw\}$ the weight $c_{w,gw}=1$ if $g=a^{\pm1}$ and $c_{w,gw}=t$ if $g=b^{\pm1}$, and call it an $a$-edge or
 a $b$-edge accordingly. Then $T_t$ is the weighted adjacency operator of this tree. Let $h(w)>0$ be the product, over the letters of the reduced word $w$, of $\rho_a$ for each letter
 $a^{\pm1}$ and $\rho_b$ for each letter $b^{\pm1}$; so $h(e)=1$. Write $w'\sim w$ when $w'$ and $w$ are joined, and $(T_th)(w)=\sum_{w'\sim w}c_{w,w'}h(w')$. At the
@@ -222,12 +234,11 @@ $\mathbf F_2$, with $g_i,g_j$ in place of $a,b$. Hence the norm equals $\|T_t\|$
 
 \section{The finite side}\label{sec:finite}
 
-This section bounds the norm of $P(\mathbf U,\mathbf U^*)$ on $H_N$ from below and proves \Cref{thm:main}.
 A permutation matrix $U$ permutes the basis vectors $\delta_x$ of $\mathbb C^N$; a fixed point or a cycle of $U$
 is a fixed point or a cycle of this permutation.
 
 \begin{lemma}\label{lem:finite}
-Let $N\ge 2$ and let $A,B$ be $N\times N$ permutation matrices. There are an ordering $(C,D)$ of $(A,B)$, a
+Let $N\ge 2$ and $n=N-1$, and let $A,B$ be $N\times N$ permutation matrices. There are an ordering $(C,D)$ of $(A,B)$, a
 unit vector $v\in H_N$ and a complex number $z$ with $|z|=1$ such that
 \[
   Cv=zv\qquad\text{and}\qquad|\operatorname{Re}\langle v,Dv\rangle|\ge\frac1n .
@@ -353,6 +364,18 @@ J.~Friedman,
 Mem.\ Amer.\ Math.\ Soc.\ \textbf{195} (2008), no.~910.
 \doi{10.1090/memo/0910}
 
+\bibitem{HPS}
+C.~Hall, D.~Puder and W.~F.~Sawin,
+\emph{Ramanujan coverings of graphs},
+Adv.\ Math.\ \textbf{323} (2018), 367--410.
+\doi{10.1016/j.aim.2017.10.042}
+
+\bibitem{Ke}
+H.~Kesten,
+\emph{Symmetric random walks on groups},
+Trans.\ Amer.\ Math.\ Soc.\ \textbf{92} (1959), 336--354.
+\doi{10.1090/S0002-9947-1959-0109367-6}
+
 \bibitem{LPS}
 A.~Lubotzky, R.~Phillips and P.~Sarnak,
 \emph{Ramanujan graphs},
@@ -371,12 +394,17 @@ A.~W.~Marcus, D.~A.~Spielman and N.~Srivastava,
 Ann.\ of Math.\ (2) \textbf{182} (2015), 307--325.
 \doi{10.4007/annals.2015.182.1.7}
 
+\bibitem{MO}
+S.~Mohanty and R.~O'Donnell,
+\emph{X-Ramanujan graphs},
+in: Proceedings of the 2020 ACM-SIAM Symposium on Discrete Algorithms (SODA), SIAM, 2020, 1226--1243.
+\doi{10.1137/1.9781611975994.75}; arXiv:1904.03500.
+
 \bibitem{OW}
 R.~O'Donnell and X.~Wu,
 \emph{Explicit near-fully X-Ramanujan graphs},
 in: 2020 IEEE 61st Annual Symposium on Foundations of Computer Science (FOCS), 2020, 1045--1056;
-full version arXiv:2009.02595.
-\doi{10.1109/FOCS46700.2020.00101}; arXiv:2009.02595.
+\doi{10.1109/FOCS46700.2020.00101}; full version arXiv:2009.02595.
 
 \bibitem{vH}
 R.~van Handel,
