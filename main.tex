@@ -78,14 +78,16 @@ $\mathbf F_r$ would then embed in the $N\times N$ matrices, and writes that he i
 degree bound. He also poses the weaker question in which $\mathbf U^N$ may depend on the polynomial $P$.
 
 The obstruction for fixed $N$ uses all polynomials at once and gives no bound on the degree.
-For a fixed self-adjoint polynomial $P$ and $\varepsilon>0$, O'Donnell and Wu \cite{OW} construct explicit
-permutation tuples of arbitrarily large size at which the spectrum of $P(\mathbf U^N,\mathbf U^{N*})|_{H_N}$ lies
-within Hausdorff distance $\varepsilon$ of the spectrum of $P(\mathbf u,\mathbf u^*)$, so that $P$ satisfies
-\eqref{eq:vh} up to the additive error $\varepsilon$ at a tuple chosen for $P$ and $\varepsilon$. Alev and Rao
-\cite[Theorem~5.5]{AR} prove, for a fixed polynomial $Q$ with nonnegative coefficients evaluated at adjacency
-matrices of regular graphs of bounded degree conjugated by permutation matrices, that the norm on $H_N$ is at least
-the norm of $Q$ at free copies of the adjacency operators of the corresponding regular trees, minus an error that
-tends to zero as $N\to\infty$.
+O'Donnell and Wu \cite[Theorem~10.13]{OW} fix a degree $k$, a bound $R$ on the coefficients and
+$\varepsilon>0$. For every large $N$ they construct an explicit permutation tuple of a size between $N$ and
+$N+o(N)$ that serves every self-adjoint polynomial $P$ of degree at most $k$ with coefficients bounded by $R$ at
+once: the spectrum of $P(\mathbf U^N,\mathbf U^{N*})|_{H_N}$ lies within Hausdorff distance $\varepsilon$ of the
+spectrum of $P(\mathbf u,\mathbf u^*)$. So all these polynomials satisfy \eqref{eq:vh} up to the additive error
+$\varepsilon$ at one tuple. Alev and Rao \cite[Theorem~5.5]{AR} take a fixed polynomial $Q$ with nonnegative
+coefficients and evaluate it at adjacency matrices of regular graphs of bounded degree, each conjugated by a
+permutation matrix. For every choice of the permutations, the norm on $H_N$ is at least the norm of $Q$ at free
+copies of the adjacency operators of the corresponding regular trees, minus an error that tends to zero as
+$N\to\infty$.
 
 The inequality \eqref{eq:vh} holds with equality for polynomials of degree zero. It fails already for polynomials
 of degree one, for every $N\ge 2$ and every tuple. Put $n=N-1$ and write $\mathbf U=(U_1,\dots,U_r)$ for
@@ -111,10 +113,11 @@ $v\in H_N$, $Cv=zv$, at which the other, $D$, satisfies
   \langle v,P(\mathbf U,\mathbf U^*)v\rangle=2+2t\,|\operatorname{Re}\langle v,Dv\rangle|\ \ge\ 2+\frac{2t}n ,
 \]
 and $2t/n>2t^{4/3}$ when $t<n^{-3}$. The gap is then positive for every $N\ge 2$. In \cite{AR} the norm on $H_N$ is
-bounded below by the free norm minus an error term, for a fixed polynomial with nonnegative coefficients; here it is
-bounded below by the free norm plus $1/(4n^4)$, for a polynomial that depends on the tuple and whose coefficients
-$\bar z$, $z$ and $\sigma t$ need not be nonnegative. In \cite{OW} the polynomial is fixed and the tuple is chosen
-for it; here the tuple is arbitrary and the polynomial is chosen for it.
+bounded below by the free norm minus an error term, for a fixed polynomial with nonnegative coefficients. Here it
+is bounded below by the free norm plus $1/(4n^4)$, for a polynomial that depends on the tuple and whose
+coefficients $\bar z$, $z$ and $\sigma t$ need not be nonnegative. In \cite{OW} one tuple serves all polynomials
+of bounded degree and bounded coefficients up to the error $\varepsilon$; here no tuple serves all polynomials of
+degree one with no error.
 
 \begin{theorem}\label{thm:main}
 Let $N\ge 2$, $r\ge 2$ and $n=N-1$, and let $\mathbf U=(U_1,\dots,U_r)$ be $N\times N$ permutation matrices.
@@ -123,15 +126,15 @@ polynomial \eqref{eq:P} with $t=1/(2n^3)$ satisfies
 \[
   \bigl\|P(\mathbf U,\mathbf U^*)|_{H_N}\bigr\|\ \ge\ 2+\frac1{n^4}\ \ge\ \|P(\mathbf u,\mathbf u^*)\|+\frac1{4n^4}.
 \]
-In particular, for $r\ge 2$ no sequence of permutation tuples satisfies \eqref{eq:vh} for all polynomials of degree
-at most one, whatever the sizes $N\ge 2$.
+In particular, for $r\ge 2$ and $N\ge 2$ no $r$-tuple of $N\times N$ permutation matrices satisfies \eqref{eq:vh}
+for all polynomials of degree at most one.
 \end{theorem}
 
-The polynomial depends on $\mathbf U$, as the question allows. Its phase $z$ is an eigenvalue of a permutation
+The polynomial depends on $\mathbf U$, as the question allows. The number $z$ is an eigenvalue of a permutation
 matrix, hence a root of unity of order at most $N$, and this gives a set that does not depend on $\mathbf U$.
 
 \begin{corollary}\label{cor:family}
-Let $N\ge 2$ and $r\ge 2$, and let $\mathcal P_N$ be the set of polynomials \eqref{eq:P} with $t=1/(2n^3)$,
+Let $N\ge 2$, $r\ge 2$ and $n=N-1$, and let $\mathcal P_N$ be the set of polynomials \eqref{eq:P} with $t=1/(2n^3)$,
 $(i,j)\in\{(1,2),(2,1)\}$, $\sigma\in\{1,-1\}$ and $z^k=1$ for some $1\le k\le N$. Then $|\mathcal P_N|\le 2N(N+1)$,
 and for every $r$-tuple $\mathbf U$ of $N\times N$ permutation matrices some $P\in\mathcal P_N$ satisfies
 $\|P(\mathbf U,\mathbf U^*)|_{H_N}\|\ge\|P(\mathbf u,\mathbf u^*)\|+1/(4n^4)$.
@@ -139,7 +142,7 @@ $\|P(\mathbf U,\mathbf U^*)|_{H_N}\|\ge\|P(\mathbf u,\mathbf u^*)\|+1/(4n^4)$.
 
 \begin{remark}\label{rem:scope}
 \begin{enumerate}[label=(\alph*)]
-\item The gap $1/(4n^4)$ tends to zero, so \Cref{thm:main} is consistent with strong convergence and with the
+\item The lower bound $1/(4n^4)$ for the gap tends to zero, so \Cref{thm:main} is consistent with strong convergence and with the
 constructions of \cite{OW}. For $t=1/(2n^3)$ the coefficients of \eqref{eq:P} have $\ell^1$ norm $2+2t\le 3$, so
 after normalization the gap is at least $1/(12n^4)$.
 \item For $r=1$ the inequality \eqref{eq:vh} holds for every Laurent polynomial $P$ and every unitary matrix $U$:
@@ -370,7 +373,8 @@ Ann.\ of Math.\ (2) \textbf{182} (2015), 307--325.
 \bibitem{OW}
 R.~O'Donnell and X.~Wu,
 \emph{Explicit near-fully X-Ramanujan graphs},
-in: 2020 IEEE 61st Annual Symposium on Foundations of Computer Science (FOCS), 2020, 1045--1056.
+in: 2020 IEEE 61st Annual Symposium on Foundations of Computer Science (FOCS), 2020, 1045--1056;
+full version arXiv:2009.02595.
 \doi{10.1109/FOCS46700.2020.00101}; arXiv:2009.02595.
 
 \bibitem{vH}
