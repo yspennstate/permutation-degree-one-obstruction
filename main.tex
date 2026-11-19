@@ -79,10 +79,10 @@ degree bound. He also poses the weaker question in which $\mathbf U^N$ may depen
 
 The obstruction for fixed $N$ uses all polynomials at once and gives no bound on the degree.
 O'Donnell and Wu \cite[Theorem~10.13]{OW} fix a degree $k$, a bound $R$ on the coefficients and
-$\varepsilon>0$. For every large $N$ they construct an explicit permutation tuple of a size between $N$ and
-$N+o(N)$ that serves every self-adjoint polynomial $P$ of degree at most $k$ with coefficients bounded by $R$ at
-once: the spectrum of $P(\mathbf U^N,\mathbf U^{N*})|_{H_N}$ lies within Hausdorff distance $\varepsilon$ of the
-spectrum of $P(\mathbf u,\mathbf u^*)$. So all these polynomials satisfy \eqref{eq:vh} up to the additive error
+$\varepsilon>0$. For every $N$ they construct an explicit tuple $\mathbf U^{N'}$ of $N'\times N'$ permutation
+matrices, with $N\le N'\le N+o(N)$ as $N\to\infty$, that serves every self-adjoint polynomial $P$ of degree at most $k$ with
+coefficients bounded by $R$ at once: the spectrum of $P(\mathbf U^{N'},\mathbf U^{N'*})|_{H_{N'}}$ lies within
+Hausdorff distance $\varepsilon$ of the spectrum of $P(\mathbf u,\mathbf u^*)$. So all these polynomials satisfy \eqref{eq:vh} up to the additive error
 $\varepsilon$ at one tuple. Alev and Rao \cite[Theorem~5.5]{AR} take a fixed polynomial $Q$ with nonnegative
 coefficients and evaluate it at adjacency matrices of regular graphs of bounded degree, each conjugated by a
 permutation matrix. For every choice of the permutations, the norm on $H_N$ is at least the norm of $Q$ at free
@@ -112,10 +112,10 @@ $v\in H_N$, $Cv=zv$, at which the other, $D$, satisfies
 \[
   \langle v,P(\mathbf U,\mathbf U^*)v\rangle=2+2t\,|\operatorname{Re}\langle v,Dv\rangle|\ \ge\ 2+\frac{2t}n ,
 \]
-and $2t/n>2t^{4/3}$ when $t<n^{-3}$. The gap is then positive for every $N\ge 2$. In \cite{AR} the norm on $H_N$ is
+and $2t/n>2t^{4/3}$ when $t<n^{-3}$. The gap is then positive for every $N\ge 2$. In the theorem of Alev and Rao the norm on $H_N$ is
 bounded below by the free norm minus an error term, for a fixed polynomial with nonnegative coefficients. Here it
 is bounded below by the free norm plus $1/(4n^4)$, for a polynomial that depends on the tuple and whose
-coefficients $\bar z$, $z$ and $\sigma t$ need not be nonnegative. In \cite{OW} one tuple serves all polynomials
+coefficients $\bar z$, $z$ and $\sigma t$ need not be nonnegative. In the theorem of O'Donnell and Wu one tuple serves all polynomials
 of bounded degree and bounded coefficients up to the error $\varepsilon$; here no tuple serves all polynomials of
 degree one with no error.
 
@@ -149,7 +149,8 @@ after normalization the gap is at least $1/(12n^4)$.
 the spectrum of $U$ lies on the unit circle, so $\|P(U,U^*)\|=\max_{\zeta\in\operatorname{spec}U}|P(\zeta,\bar\zeta)|
 \le\max_{|\zeta|=1}|P(\zeta,\bar\zeta)|=\|P(u,u^*)\|$, the last equality by the Fourier transform on $\ell^2(\mathbb Z)$.
 So two generators are needed.
-\item \Cref{lem:finite} uses that the matrices are permutation matrices. In \Cref{thm:main} the polynomial is
+\item The proof of \Cref{lem:finite} uses that a permutation matrix fixes $\one$ and that its trace is the number
+of its fixed points. In \Cref{thm:main} the polynomial is
 chosen after the tuple; the weaker question, in which the tuple is chosen after the polynomial, is not settled by it.
 \end{enumerate}
 \end{remark}
