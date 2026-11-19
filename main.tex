@@ -27,14 +27,15 @@ Givat Ram, Jerusalem, Israel}
 \maketitle
 
 \begin{abstract}
-Van Handel asked whether there are permutation matrices of arbitrarily large size $N$ whose restriction to the space
-orthogonal to the constant vector gives every noncommutative polynomial of degree at most $q(N)$ a norm no larger
-than its free norm, its norm in the left regular representation of the free group, for some $q(N)\to\infty$. Such a
+Van Handel asked whether there are permutation matrices of arbitrarily large size $N$ with the following property,
+for some $q(N)\to\infty$. On the space orthogonal to the constant vector, every noncommutative polynomial of degree
+at most $q(N)$ has norm at most its free norm, that is, its norm in the left regular representation of the free
+group. Such a
 property would extend the Ramanujan property of regular graphs to all polynomials. We show that it fails already for
 polynomials of degree one: for every $N\ge 2$, every $r\ge 2$ and every $r$-tuple of $N\times N$ permutation
 matrices there is a self-adjoint polynomial of degree one, with scalar coefficients, whose norm on that space exceeds
 its free norm by at least $1/(4(N-1)^4)$. The polynomial can be taken
-from an explicit list of at most $2N(N+1)$ polynomials that depends only on $N$.
+from an explicit set of at most $2N(N+1)$ polynomials that depends only on $N$.
 \end{abstract}
 
 \noindent\textit{Mathematics Subject Classification (2020):} 46L54, 05C50, 15B51, 46L05.\\
@@ -58,15 +59,16 @@ in probability, for every polynomial $P$ with matrix coefficients. This is the \
 $\mathbf U^N|_{H_N}$ to $\mathbf u$. For the single polynomial $x_1+x_1^*+\dots+x_r+x_r^*$ the left side is the
 norm on $H_N$ of the adjacency matrix of a $2r$-regular graph, and the free norm is $2\sqrt{2r-1}$, the norm of the
 adjacency operator of the $2r$-regular tree. For this polynomial the theorem of Bordenave and Collins is Friedman's
-theorem \cite{Fr} on random regular graphs.
+theorem \cite{Fr} for this model of random $2r$-regular graphs: the norm of the adjacency matrix on $H_N$ tends to
+$2\sqrt{2r-1}$ in probability.
 A $d$-regular graph on $N$ vertices whose adjacency matrix has norm at most $2\sqrt{d-1}$ on $H_N$ is a Ramanujan
 graph; such graphs exist for infinitely many degrees by the constructions of Lubotzky, Phillips and Sarnak
 \cite{LPS} and of Margulis \cite{Ma}. A bipartite $d$-regular graph has the eigenvalue $-d$ on $H_N$; the bipartite
 Ramanujan graphs of every degree of Marcus, Spielman and Srivastava \cite{MSS} satisfy the bound $2\sqrt{d-1}$ for
 the remaining eigenvalues.
 
-Van Handel \cite[Section~6.5]{vH} asked whether the strong convergence phenomenon has a Ramanujan form. He asks whether
-there are permutation matrices $\mathbf U^N$ for arbitrarily large $N$ such that
+Van Handel \cite[Section~6.5]{vH} asks whether the strong convergence phenomenon has a Ramanujan form, namely
+whether there are permutation matrices $\mathbf U^N$ for arbitrarily large $N$ such that
 \begin{equation}\label{eq:vh}
   \bigl\|P(\mathbf U^N,\mathbf U^{N*})|_{H_N}\bigr\|\le\|P(\mathbf u,\mathbf u^*)\|
 \end{equation}
@@ -88,9 +90,9 @@ number $z$ with $|z|=1$, a sign $\sigma\in\{1,-1\}$ and $t>0$ let
 \end{equation}
 and call $\|P(\mathbf U,\mathbf U^*)|_{H_N}\|-\|P(\mathbf u,\mathbf u^*)\|$ the \emph{gap} of $P$ at $\mathbf U$.
 The free norm of $P$ does not depend on $i$, $j$, $z$ or $\sigma$ (\Cref{lem:phase}), and
-\[
+\begin{equation}\label{eq:freebound}
   \|P(\mathbf u,\mathbf u^*)\|\ \le\ 2+2t^{4/3}
-\]
+\end{equation}
 (\Cref{lem:free}). The exact value is given by the formula of Akemann and Ostrand \cite{AO} for weighted sums of
 free generators, in the form stated by Bordenave and Lacoin \cite[(62)]{BL}; \Cref{lem:free} proves the upper
 bound by a weighted Schur test. For any two $N\times N$ permutation matrices, one of them, $C$, has an eigenvector
@@ -117,7 +119,7 @@ at most one, whatever the sizes $N\ge 2$.
 \end{theorem}
 
 The polynomial depends on $\mathbf U$, as the question allows. Its phase $z$ is an eigenvalue of a permutation
-matrix, hence a root of unity of order at most $N$, and this gives a list that does not depend on $\mathbf U$.
+matrix, hence a root of unity of order at most $N$, and this gives a set that does not depend on $\mathbf U$.
 
 \begin{corollary}\label{cor:family}
 Let $N\ge 2$ and $r\ge 2$, and let $\mathcal P_N$ be the set of polynomials \eqref{eq:P} with $t=1/(2n^3)$,
@@ -135,18 +137,22 @@ after normalization the gap is at least $1/(12n^4)$.
 the spectrum of $U$ lies on the unit circle, so $\|P(U,U^*)\|=\max_{\zeta\in\operatorname{spec}U}|P(\zeta,\bar\zeta)|
 \le\max_{|\zeta|=1}|P(\zeta,\bar\zeta)|=\|P(u,u^*)\|$, the last equality by the Fourier transform on $\ell^2(\mathbb Z)$.
 So two generators are needed.
-\item \Cref{thm:main} uses that the matrices are permutation matrices, through \Cref{lem:finite}, and says nothing
-about the weaker question in which $\mathbf U^N$ may depend on $P$.
+\item \Cref{lem:finite} uses that the matrices are permutation matrices. In \Cref{thm:main} the polynomial is
+chosen after the tuple; the weaker question, in which the tuple is chosen after the polynomial, is not settled by it.
 \end{enumerate}
 \end{remark}
 
 
 \section{The free side}\label{sec:free}
 
-Let $a,b$ be free generators of $\mathbf F_2$ and, for $t>0$,
+This section bounds the free norm of the polynomial \eqref{eq:P}. Let $a,b$ be free generators of $\mathbf F_2$
+and, for $t>0$,
 \[
-  T_t=\lambda(a)+\lambda(a)^*+t\bigl(\lambda(b)+\lambda(b)^*\bigr).
+  T_t=\lambda(a)+\lambda(a)^*+t\bigl(\lambda(b)+\lambda(b)^*\bigr),
 \]
+which for $r=2$ is $P(\mathbf u,\mathbf u^*)$ with $i=1$, $j=2$, $z=1$ and $\sigma=1$. The exact value of $\|T_t\|$
+is given by the formula of Akemann and Ostrand \cite{AO}, in the form of \cite[(62)]{BL}; only the upper bound
+below is used, and it has the following direct proof.
 
 \begin{lemma}\label{lem:free}
 For all $s,t>0$,
@@ -161,10 +167,10 @@ $\rho_b^{-1}=(\sqrt{s^2+4t^2}+s)/(2t)$, so that
 \begin{equation}\label{eq:rho}
   \rho_a^{-1}-\rho_a=s,\qquad t\,(\rho_b^{-1}-\rho_b)=s .
 \end{equation}
-The operator $T_t$ is the weighted adjacency operator of the Cayley graph of $\mathbf F_2$ with respect to
-$\{a^{\pm1},b^{\pm1}\}$ in which $w$ is joined to $gw$ for $g\in\{a^{\pm1},b^{\pm1}\}$, a $4$-regular tree, in which edges labelled $a$ have weight $c=1$ and edges labelled $b$ have
-weight $c=t$. Let $h(w)>0$ be the product, over the letters of the reduced word $w$, of $\rho_a$ for each letter
-$a^{\pm1}$ and $\rho_b$ for each letter $b^{\pm1}$; so $h(e)=1$. Write $w'\sim w$ when $w'$ and $w$ are joined, and $(T_th)(w)=\sum_{w'\sim w}c_{ww'}h(w')$. At the
+Join each $w\in\mathbf F_2$ to $gw$ for $g\in\{a^{\pm1},b^{\pm1}\}$; this graph is a $4$-regular tree. Give the
+edge $\{w,gw\}$ the weight $c_{w,gw}=1$ if $g=a^{\pm1}$ and $c_{w,gw}=t$ if $g=b^{\pm1}$, and call it an $a$-edge or
+a $b$-edge accordingly. Then $T_t$ is the weighted adjacency operator of this tree. Let $h(w)>0$ be the product, over the letters of the reduced word $w$, of $\rho_a$ for each letter
+$a^{\pm1}$ and $\rho_b$ for each letter $b^{\pm1}$; so $h(e)=1$. Write $w'\sim w$ when $w'$ and $w$ are joined, and $(T_th)(w)=\sum_{w'\sim w}c_{w,w'}h(w')$. At the
 root, $(T_th)(e)/h(e)=2\rho_a+2t\rho_b$. At a vertex $w\ne e$ whose first letter is $a^{\pm1}$, the neighbours are the
 parent, one further vertex across an $a$-edge and two across $b$-edges, so by \eqref{eq:rho}
 \[
@@ -174,7 +180,7 @@ and the same value is obtained when the first letter is $b^{\pm1}$. Hence $(T_th
 $\mu=2\rho_a+2t\rho_b+s=\sqrt{s^2+4}+\sqrt{s^2+4t^2}-s$.
 
 For finitely supported $f$, summing $2|f(w)f(w')|\le|f(w)|^2h(w')/h(w)+|f(w')|^2h(w)/h(w')$ over the edges
-$\{w,w'\}$ with weight $c_{ww'}$ gives
+$\{w,w'\}$ with weight $c_{w,w'}$ gives
 \[
   |\langle f,T_tf\rangle|\le\sum_w|f(w)|^2\,\frac{(T_th)(w)}{h(w)}\le\mu\|f\|^2 .
 \]
@@ -182,8 +188,8 @@ Since $T_t$ is bounded and self-adjoint and finitely supported vectors are dense
 inequality of the lemma follows from $\sqrt{s^2+4}\le 2+s^2/4$ and $\sqrt{s^2+4t^2}\le s+2t^2/s$.
 \end{proof}
 
-With $s=(4t^2)^{1/3}$ the last bound of \Cref{lem:free} is $2+3\cdot 4^{-1/3}t^{4/3}\le 2+2t^{4/3}$, the estimate
-stated in the introduction. For $t=1/(2n^3)$ this choice is $s=1/n^2$, the value used in the proof of \Cref{thm:main}.
+With $s=(4t^2)^{1/3}$ the last bound of \Cref{lem:free} is $2+3\cdot 4^{-1/3}t^{4/3}\le 2+2t^{4/3}$, which with
+\Cref{lem:phase} gives \eqref{eq:freebound}. For $t=1/(2n^3)$ this choice is $s=1/n^2$, the value used in the proof of \Cref{thm:main}.
 
 \begin{lemma}\label{lem:phase}
 Let $r\ge 2$, $i\ne j$, $|z|=1$, $\sigma\in\{1,-1\}$ and $t>0$. For the polynomial $P$ of \eqref{eq:P},
@@ -202,6 +208,8 @@ $\mathbf F_2$, with $g_i,g_j$ in place of $a,b$. Hence the norm equals $\|T_t\|$
 \end{proof}
 
 \section{The finite side}\label{sec:finite}
+
+This section bounds the norm of $P(\mathbf U,\mathbf U^*)$ on $H_N$ from below and proves \Cref{thm:main}.
 
 \begin{lemma}\label{lem:finite}
 Let $N\ge 2$ and let $A,B$ be $N\times N$ permutation matrices. There are an ordering $(C,D)$ of $(A,B)$, a
@@ -274,8 +282,8 @@ paper~\cite{MathBrainPaper}, the Math Brain repository~\cite{MathBrainRepo} and 
 repository~\cite{BrainFramework}.
 
 The research presented in this paper was supported by the European Research Council (ERC) under the European
-Union's Horizon Europe research and innovation programme (grant agreement No.\ 101041711), by the Simons Foundation
-(as part of the Collaboration on the Mathematical and Scientific Foundations of Deep Learning), by Heights Labs, by
+Union's Horizon Europe research and innovation programme (grant agreement No.\ 101041711). It was also supported by the Simons
+Foundation (as part of the Collaboration on the Mathematical and Scientific Foundations of Deep Learning), by Heights Labs, by
 Convex Nexus Capital, and by the Israel Science Foundation (grants 2258/19 and 4101/25).
 
 \section*{Declaration of competing interest}
@@ -292,8 +300,9 @@ responsible for the content of the paper and for decisions concerning its dissem
 
 \section*{Data and code availability}
 
-A Python script that checks, for every pair of permutation matrices of size $N\le 5$, the finite inequality of
-\Cref{lem:finite} and the lower bound $2+1/n^4$ for some member of $\mathcal P_N$, and the example of
+A Python script that checks \Cref{lem:finite} and the inequality
+$\|P(\mathbf U,\mathbf U^*)|_{H_N}\|\ge 2+1/n^4$ of \Cref{thm:main}, for the polynomial of the proof and for some
+member of $\mathcal P_N$, for every ordered pair of permutation matrices of size $N\le 5$, and the example of
 \Cref{rem:example} in exact arithmetic, is available at
 \url{https://github.com/yspennstate/permutation-degree-one-obstruction}.
 
