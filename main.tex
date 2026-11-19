@@ -56,11 +56,14 @@ Bordenave and Collins \cite{BC} proved that for independent uniformly random per
 \]
 in probability, for every polynomial $P$ with matrix coefficients. This is the \emph{strong convergence} of
 $\mathbf U^N|_{H_N}$ to $\mathbf u$. For the single polynomial $x_1+x_1^*+\dots+x_r+x_r^*$ the left side is the
-largest absolute value of a nontrivial eigenvalue of a $2r$-regular graph and the free norm is $2\sqrt{2r-1}$, the norm of the adjacency operator of the $2r$-regular tree, so this is a strong form of
-Friedman's theorem \cite{Fr} on random regular graphs. A $d$-regular graph whose nontrivial eigenvalues lie in
-$[-2\sqrt{d-1},2\sqrt{d-1}]$, with no error term, is a Ramanujan graph; such graphs exist for many degrees by the
-constructions of Lubotzky, Phillips and Sarnak \cite{LPS} and of Margulis \cite{Ma}, and bipartite Ramanujan graphs of every
-degree exist by the work of Marcus, Spielman and Srivastava \cite{MSS}.
+norm on $H_N$ of the adjacency matrix of a $2r$-regular graph, and the free norm is $2\sqrt{2r-1}$, the norm of the
+adjacency operator of the $2r$-regular tree. For this polynomial the theorem of Bordenave and Collins is Friedman's
+theorem \cite{Fr} on random regular graphs.
+A $d$-regular graph on $N$ vertices whose adjacency matrix has norm at most $2\sqrt{d-1}$ on $H_N$ is a Ramanujan
+graph; such graphs exist for infinitely many degrees by the constructions of Lubotzky, Phillips and Sarnak
+\cite{LPS} and of Margulis \cite{Ma}. A bipartite $d$-regular graph has the eigenvalue $-d$ on $H_N$; the bipartite
+Ramanujan graphs of every degree of Marcus, Spielman and Srivastava \cite{MSS} satisfy the bound $2\sqrt{d-1}$ for
+the remaining eigenvalues.
 
 Van Handel \cite[Section~6.5]{vH} asked whether the strong convergence phenomenon has a Ramanujan form. He asks whether
 there are permutation matrices $\mathbf U^N$ for arbitrarily large $N$ such that
@@ -72,33 +75,40 @@ for every polynomial $P$ of degree at most $q(N)$, where $q(N)\to\infty$ suffici
 $\mathbf F_r$ would then embed in the $N\times N$ matrices, and writes that he is not aware of an obstruction under a
 degree bound. He also poses the weaker question in which $\mathbf U^N$ may depend on the polynomial $P$.
 
-Polynomials of degree zero satisfy \eqref{eq:vh} with equality. Our result is that degree one already fails, for
-every $N$ and every tuple. Throughout, $n=N-1$. The proof compares two estimates for a parameter $t>0$. On the free
-side (\Cref{lem:free,lem:phase}), phases and signs on the generators do not change the free norm, and
+The obstruction in a fixed dimension uses all polynomials at once and gives no bound on the degree.
+O'Donnell and Wu \cite{OW} construct deterministic permutation tuples that satisfy \eqref{eq:vh} up to an additive
+error. Alev and Rao \cite{AR} obtain by a covering argument deterministic spectral lower bounds, with an error term
+that tends to zero, for polynomials with nonnegative coefficients evaluated on permutation conjugates of regular
+graph adjacency matrices. Polynomials of degree zero satisfy \eqref{eq:vh} with equality.
+
+Degree one already fails, for every $N\ge 2$ and every tuple. Put $n=N-1$. For indices $i\ne j$, a complex
+number $z$ with $|z|=1$, a sign $\sigma\in\{1,-1\}$ and $t>0$ let
+\begin{equation}\label{eq:P}
+  P=\bar z\,x_i+z\,x_i^*+\sigma t\,(x_j+x_j^*),
+\end{equation}
+and call $\|P(\mathbf U,\mathbf U^*)|_{H_N}\|-\|P(\mathbf u,\mathbf u^*)\|$ the \emph{gap} of $P$ at $\mathbf U$.
+The free norm of $P$ does not depend on $i$, $j$, $z$ or $\sigma$ (\Cref{lem:phase}), and
 \[
-  \bigl\|u_1+u_1^*+t(u_2+u_2^*)\bigr\|\ \le\ 2+2t^{4/3};
+  \|P(\mathbf u,\mathbf u^*)\|\ \le\ 2+2t^{4/3}
 \]
-the exact value of this norm is given by the formula of Akemann and Ostrand \cite{AO} for weighted sums of free
-generators, in the form stated by Bordenave and Lacoin \cite[(62)]{BL}, and we give a short weighted Schur proof of
-the bound. On the finite side (\Cref{lem:finite}), for any two $N\times N$ permutation matrices one of them, $C$, has an eigenvector
-$v\in H_N$ of norm one on which the other, $D$, satisfies
+(\Cref{lem:free}). The exact value is given by the formula of Akemann and Ostrand \cite{AO} for weighted sums of
+free generators, in the form stated by Bordenave and Lacoin \cite[(62)]{BL}; \Cref{lem:free} proves the upper
+bound by a weighted Schur test. For any two $N\times N$ permutation matrices, one of them, $C$, has an eigenvector
+$v\in H_N$ of norm one, $Cv=zv$, at which the other, $D$, satisfies
 \[
-  |\operatorname{Re}\langle v,Dv\rangle|\ \ge\ \frac1n .
+  |\operatorname{Re}\langle v,Dv\rangle|\ \ge\ \frac1n
 \]
-The second generator then adds $2t/n$ to the Rayleigh quotient $2$ of the first, which beats $2t^{4/3}$ once
-$t<n^{-3}$. O'Donnell and Wu \cite{OW} construct deterministic permutation tuples that satisfy \eqref{eq:vh} up to an
-additive error, and Alev and Rao \cite{AR} use a covering argument to obtain deterministic spectral lower bounds, with
-an error term that tends to zero, for polynomials with nonnegative coefficients. The gap below has no error term,
-and it uses a phase and a sign in the coefficients, which nonnegative coefficients exclude.
+(\Cref{lem:finite}). With $U_i=C$, $U_j=D$ and $\sigma$ the sign of $\operatorname{Re}\langle v,Dv\rangle$,
+\[
+  \langle v,P(\mathbf U,\mathbf U^*)v\rangle=2+2t\,|\operatorname{Re}\langle v,Dv\rangle|\ \ge\ 2+\frac{2t}n ,
+\]
+and $2t/n>2t^{4/3}$ when $t<n^{-3}$. The gap is then positive for every $N\ge 2$, with no error term. The
+coefficients $\bar z$, $z$ and $\sigma t$ need not be nonnegative.
 
 \begin{theorem}\label{thm:main}
-Let $N\ge 2$ and $r\ge 2$, and let $\mathbf U=(U_1,\dots,U_r)$ be $N\times N$ permutation matrices. There are
-indices $i\ne j$, a complex number $z$ with $|z|=1$ and a sign $\sigma\in\{1,-1\}$ such that the self-adjoint
-polynomial
-\begin{equation}\label{eq:P}
-  P=\bar z\,x_i+z\,x_i^*+\sigma t\,(x_j+x_j^*),\qquad t>0,
-\end{equation}
-with $t=1/(2n^3)$ satisfies
+Let $N\ge 2$, $r\ge 2$ and $n=N-1$, and let $\mathbf U=(U_1,\dots,U_r)$ be $N\times N$ permutation matrices.
+There are indices $i\ne j$, a complex number $z$ with $|z|=1$ and a sign $\sigma\in\{1,-1\}$ such that the
+polynomial \eqref{eq:P} with $t=1/(2n^3)$ satisfies
 \[
   \bigl\|P(\mathbf U,\mathbf U^*)|_{H_N}\bigr\|\ \ge\ 2+\frac1{n^4}\ \ge\ \|P(\mathbf u,\mathbf u^*)\|+\frac1{4n^4}.
 \]
@@ -125,11 +135,8 @@ after normalization the gap is at least $1/(12n^4)$.
 the spectrum of $U$ lies on the unit circle, so $\|P(U,U^*)\|=\max_{\zeta\in\operatorname{spec}U}|P(\zeta,\bar\zeta)|
 \le\max_{|\zeta|=1}|P(\zeta,\bar\zeta)|=\|P(u,u^*)\|$, the last equality by the Fourier transform on $\ell^2(\mathbb Z)$.
 So two generators are needed.
-\item The argument uses that the matrices are permutation matrices, through \Cref{lem:finite}, and says nothing about
-the weaker question in which $\mathbf U^N$ may depend on $P$.
-\item The polynomials of \cite{AR} have nonnegative coefficients and are evaluated on permutation conjugates of
-regular graph adjacency matrices. In \Cref{thm:main} the phase $z$ and the sign $\sigma$ do not change the free norm
-(\Cref{lem:phase}), and they are what let a single eigenvector of one permutation produce a positive gap.
+\item \Cref{thm:main} uses that the matrices are permutation matrices, through \Cref{lem:finite}, and says nothing
+about the weaker question in which $\mathbf U^N$ may depend on $P$.
 \end{enumerate}
 \end{remark}
 
@@ -248,10 +255,12 @@ $\sum_{k=1}^Nk=N(N+1)/2$ roots of unity of order at most $N$, two choices of $(i
 \end{proof}
 
 \begin{remark}\label{rem:example}
-For $N=3$ let $C$ be the transposition of $1$ and $2$ (fixing $0$) and $D$ the cycle $0\to1\to2\to0$, and take
-$t=1/16$ and $P=C+C^*-t(D+D^*)$. On $H_3$ we have $D+D^*=-I$, the vector $(2,-1,-1)$ is an eigenvector of $P$ with
-eigenvalue $33/16$, and $(0,1,-1)$ is one with eigenvalue $-31/16$, so $\|P|_{H_3}\|=33/16$. \Cref{lem:free} with
-$s=1/4$ gives $\|P(\mathbf u,\mathbf u^*)\|\le 131/64$, a gap of at least $1/64$. For the same two permutations the
+For $N=3$ let $C$ be the transposition of $1$ and $2$ (fixing $0$) and $D$ the cycle $0\to1\to2\to0$. Take
+$\mathbf U=(C,D)$, $t=1/16$ and $P=x_1+x_1^*-t(x_2+x_2^*)$, the polynomial \eqref{eq:P} with $z=1$ and $\sigma=-1$.
+On $H_3$ we have $D+D^*=-I$, so $P(\mathbf U,\mathbf U^*)$ acts there as $2C+1/16$: the vector $(2,-1,-1)$ is an
+eigenvector with eigenvalue $33/16$ and $(0,1,-1)$ is one with eigenvalue $-31/16$, and
+$\|P(\mathbf U,\mathbf U^*)|_{H_3}\|=33/16$. \Cref{lem:phase} and \Cref{lem:free} with $s=1/4$ give
+$\|P(\mathbf u,\mathbf u^*)\|\le 131/64$, so the gap is at least $1/64$. For the same two permutations the
 adjacency operator $C+C^*+D+D^*$ has norm $3<2\sqrt3$ on $H_3$, so the corresponding $4$-regular graph is Ramanujan.
 \end{remark}
 
@@ -283,8 +292,9 @@ responsible for the content of the paper and for decisions concerning its dissem
 
 \section*{Data and code availability}
 
-A Python script that checks \Cref{lem:finite}, \Cref{thm:main} and \Cref{cor:family} for every pair of permutation
-matrices of size $N\le 5$, and the example of \Cref{rem:example} in exact arithmetic, is available at
+A Python script that checks, for every pair of permutation matrices of size $N\le 5$, the finite inequality of
+\Cref{lem:finite} and the lower bound $2+1/n^4$ for some member of $\mathcal P_N$, and the example of
+\Cref{rem:example} in exact arithmetic, is available at
 \url{https://github.com/yspennstate/permutation-degree-one-obstruction}.
 
 \begin{thebibliography}{99}
