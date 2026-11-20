@@ -101,7 +101,7 @@ copies of the adjacency operators of the corresponding regular trees, minus an e
 $N\to\infty$.
 
 The inequality \eqref{eq:vh} holds with equality for polynomials of degree zero. It fails already for polynomials
-of degree one, for every $N\ge 2$ and every tuple. Put $n=N-1$ and write $\mathbf U=(U_1,\dots,U_r)$ for
+of degree one, for every $N\ge 2$ and every tuple, with a polynomial chosen for the tuple. Put $n=N-1$ and write $\mathbf U=(U_1,\dots,U_r)$ for
 $\mathbf U^N$. For indices $i\ne j$, a complex
 number $z$ with $|z|=1$, a sign $\sigma\in\{1,-1\}$ and $t>0$ let
 \begin{equation}\label{eq:P}
@@ -112,9 +112,9 @@ The free norm of $P$ does not depend on $i$, $j$, $z$ or $\sigma$ (\Cref{lem:pha
 \begin{equation}\label{eq:freebound}
   \|P(\mathbf u,\mathbf u^*)\|\ \le\ 2+3\cdot 4^{-1/3}\,t^{4/3}
 \end{equation}
-(\Cref{lem:free}). The exact value is known: by the formula of Akemann and Ostrand \cite{AO}, in the form for
-generators and their inverses due to Gerl and Woess \cite[(2.6)]{GW} and stated by Bordenave and Lacoin
-\cite[(62)]{BL},
+(\Cref{lem:free}). The exact value is known: by the formula of Akemann and Ostrand \cite{AO}, as stated by
+Bordenave and Lacoin \cite[(62)]{BL}, who refer to Gerl and Woess \cite[(2.6)]{GW} for weights that need not be
+symmetric,
 \[
   \|P(\mathbf u,\mathbf u^*)\|=\min_{s>0}\Bigl(\sqrt{s^2+4}+\sqrt{s^2+4t^2}-s\Bigr),
 \]
@@ -129,7 +129,7 @@ $v\in H_N$, $Cv=zv$, at which the other, $D$, satisfies
   \langle v,P(\mathbf U,\mathbf U^*)v\rangle=2+2t\,|\operatorname{Re}\langle v,Dv\rangle|\ \ge\ 2+\frac{2t}n .
 \]
 This lower bound is linear in $t$, and the upper bound \eqref{eq:freebound} is of order $t^{4/3}$. For
-$t=1/(2n^3)$ they
+$t=1/(2n^3)$, which maximizes the difference of the two bounds, they
 are $2+1/n^4$ and $2+3/(4n^4)$, so the largest eigenvalue of $P(\mathbf U,\mathbf U^*)$ on $H_N$, and hence its
 norm there, exceeds the free norm of $P$ by at least $1/(4n^4)$. This value of $t$ tends to zero as $N\to\infty$.
 
@@ -194,6 +194,9 @@ and, for $t>0$,
   T_t=\lambda(a)+\lambda(a)^*+t\bigl(\lambda(b)+\lambda(b)^*\bigr),
 \]
 which for $r=2$ is $P(\mathbf u,\mathbf u^*)$ with $i=1$, $j=2$, $z=1$ and $\sigma=1$. 
+
+The first inequality of the next lemma is the upper bound in the formula of Akemann and Ostrand \cite{AO}, in
+the form of \cite[(62)]{BL}; we include the proof.
 
 \begin{lemma}\label{lem:free}
 For all $s,t>0$,
@@ -339,8 +342,8 @@ The author holds equity in Heights Labs and Convex Nexus Capital and has a manag
 
 The arguments of \Cref{sec:free,sec:finite} were developed with AI systems (OpenAI Codex and Anthropic Claude agents
 working under the author's direction), which also drafted the text and wrote the computer checks. The question is van
-Handel's \cite{vH}. The free norm estimate follows from the formula of Akemann and Ostrand \cite{AO} and of Gerl
-and Woess \cite{GW}, in the form of \cite[(62)]{BL}. The setting is the strong convergence theorem of Bordenave and
+Handel's \cite{vH}. The free norm estimate is the upper bound in the formula of Akemann and Ostrand \cite{AO},
+in the form of \cite[(62)]{BL}. The setting is the strong convergence theorem of Bordenave and
 Collins \cite{BC}. The author directed the work and is
 responsible for the content of the paper and for decisions concerning its dissemination.
 
