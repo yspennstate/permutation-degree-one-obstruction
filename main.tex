@@ -27,14 +27,14 @@ Givat Ram, Jerusalem, Israel}
 \maketitle
 
 \begin{abstract}
-Van Handel asked whether there are permutation matrices of arbitrarily large size $N$ with the following property,
-for some $q(N)\to\infty$. On the space orthogonal to the constant vector, every noncommutative polynomial of degree
-at most $q(N)$ has norm at most its free norm, that is, its norm in the left regular representation of the free
-group. Such a
+Van Handel asked whether there are $N\times N$ permutation matrices, for arbitrarily large $N$, such that on the
+space orthogonal to the constant vector every noncommutative polynomial of degree at most $q(N)$ has norm at most its
+free norm, where $q(N)\to\infty$. The free norm is the norm in the left regular representation of the free group.
+Such a
 property would extend the Ramanujan property of regular graphs to all polynomials. We show that it fails already for
 polynomials of degree one: for every $N\ge 2$, every $r\ge 2$ and every $r$-tuple of $N\times N$ permutation
-matrices there is a self-adjoint polynomial of degree one, with scalar coefficients, whose norm on that space exceeds
-its free norm by at least $1/(4(N-1)^4)$. The polynomial can be taken
+matrices there is a self-adjoint polynomial of degree one, with complex coefficients, whose largest eigenvalue on
+that space, and hence its norm there, exceeds its free norm by at least $1/(4(N-1)^4)$. The polynomial can be taken
 from an explicit set of at most $2N(N+1)$ polynomials that depends only on $N$.
 \end{abstract}
 
@@ -43,35 +43,38 @@ from an explicit set of at most $2N(N+1)$ polynomials that depends only on $N$.
 
 \section{Introduction}\label{sec:intro}
 
-Let $r\ge 2$, let $g_1,\dots,g_r$ be free generators of the free group $\mathbf F_r$, and let $u_i=\lambda(g_i)$,
-where $\lambda$ is the left regular representation on $\ell^2(\mathbf F_r)$. For an $r$-tuple
+Let $r\ge 2$, let $g_1,\dots,g_r$ be free generators of the free group $\mathbf F_r$, and let $\lambda$ be the left regular
+representation on $\ell^2(\mathbf F_r)$. Put $u_i=\lambda(g_i)$ and $\mathbf u=(u_1,\dots,u_r)$. For an $r$-tuple
 $\mathbf U^N=(U_1^N,\dots,U_r^N)$ of $N\times N$ permutation matrices write $H_N=\one^\perp\subset\mathbb C^N$ for
 the orthogonal complement of the constant vector $\one=(1,\dots,1)$; every permutation matrix and its adjoint preserve $H_N$. For a
 noncommutative polynomial $P$ with complex coefficients in the variables $x_1,\dots,x_r,x_1^*,\dots,x_r^*$ we write
 $P(\mathbf U^N,\mathbf U^{N*})$ and $P(\mathbf u,\mathbf u^*)$ for the operators obtained by substituting
 $U_i^N,U_i^{N*}$, respectively $u_i,u_i^*$, for $x_i,x_i^*$. We call $\|P(\mathbf u,\mathbf u^*)\|$ the \emph{free
 norm} of $P$.
+
 Bordenave and Collins \cite{BC} proved that for independent uniformly random permutation matrices
 \[
   \lim_{N\to\infty}\bigl\|P(\mathbf U^N,\mathbf U^{N*})|_{H_N}\bigr\|=\|P(\mathbf u,\mathbf u^*)\|
 \]
-in probability, and the same holds for every polynomial $P$ whose coefficients are $d\times d$ matrices, for every
-$d$, with the tensor product $\mathbb C^d\otimes H_N$ in place of $H_N$. This is the \emph{strong convergence} of
+in probability, and the same holds for every polynomial $P$ whose coefficients are $m\times m$ matrices, for every
+$m$, with the tensor product $\mathbb C^m\otimes H_N$ in place of $H_N$. This is the \emph{strong convergence} of
 $\mathbf U^N|_{H_N}$ to $\mathbf u$. For the single polynomial $x_1+x_1^*+\dots+x_r+x_r^*$ the left side is the
 norm on $H_N$ of the adjacency matrix of a $2r$-regular graph, and the free norm is $2\sqrt{2r-1}$, the norm of the
 adjacency operator of the $2r$-regular tree \cite{Ke}. For this polynomial the theorem of Bordenave and Collins is Friedman's
 theorem \cite{Fr} for this model of random $2r$-regular graphs: the norm of the adjacency matrix on $H_N$ tends to
 $2\sqrt{2r-1}$ in probability.
+
 A $d$-regular graph on $N$ vertices whose adjacency matrix has norm at most $2\sqrt{d-1}$ on $H_N$ is a Ramanujan
-graph; such graphs exist for infinitely many degrees by the constructions of Lubotzky, Phillips and Sarnak
+graph; for infinitely many degrees there are such graphs with $N$ arbitrarily large, by the constructions of Lubotzky, Phillips and Sarnak
 \cite{LPS} and of Margulis \cite{Ma}. A bipartite $d$-regular graph has the eigenvalue $-d$ on $H_N$; the bipartite
 Ramanujan graphs of every degree of Marcus, Spielman and Srivastava \cite{MSS} satisfy the bound $2\sqrt{d-1}$ for
-the remaining eigenvalues. Mohanty and O'Donnell \cite[Theorem~8.1 and Appendix~B]{MO} extend the method of
-\cite{MSS} to sums of fixed finite graphs on a common vertex set: for every $N$ they obtain, by permuting $N$ copies
-of each graph, an $N$-fold lift of the sum whose new eigenvalues, those not already eigenvalues of the base graph, are at most the spectral
-radius of the corresponding infinite graph. Hall, Puder and Sawin \cite{HPS} prove the same bound for $N$-fold lifts
-of every connected finite graph without loops. These bounds have no error term and are one-sided: they bound the
-largest new eigenvalue, not the norm.
+the remaining eigenvalues. Hall, Puder and Sawin \cite{HPS} prove that every connected finite graph without loops
+has, for every $N$, an $N$-fold lift whose new eigenvalues, those not already eigenvalues of the base graph, are at
+most the spectral radius of its universal cover. Mohanty and O'Donnell \cite[Theorem~8.1]{MO} extend this, by the
+method of interlacing families, to sums of fixed finite graphs on a common vertex set. For every $N$ they obtain, by
+permuting $N$ copies of each graph, an $N$-fold lift of the sum whose new eigenvalues are at most the spectral radius
+of the corresponding infinite graph. These bounds have no error term; they are bounds for the largest new
+eigenvalue.
 
 Van Handel \cite[Section~6.5]{vH} asks whether the strong convergence phenomenon has a Ramanujan form, namely
 whether there are permutation matrices $\mathbf U^N$ for arbitrarily large $N$ such that
@@ -82,7 +85,7 @@ for every polynomial $P$ of degree at most $q(N)$, where $q(N)\to\infty$ suffici
 \eqref{eq:vh} cannot hold for all polynomials when $N$ is fixed, since the reduced group $C^*$-algebra of
 $\mathbf F_r$ would then embed in the $N\times N$ matrices, and writes that he is not aware of an obstruction under a
 degree bound. He also poses the weaker question in which $\mathbf U^N$ may depend on the polynomial $P$. A
-negative answer for polynomials with complex coefficients, as below, is also one for polynomials with matrix
+negative answer for polynomials with complex coefficients is also one for polynomials with matrix
 coefficients.
 
 The obstruction for fixed $N$ uses all polynomials at once and gives no bound on the degree.
@@ -107,7 +110,7 @@ number $z$ with $|z|=1$, a sign $\sigma\in\{1,-1\}$ and $t>0$ let
 and call $\|P(\mathbf U,\mathbf U^*)|_{H_N}\|-\|P(\mathbf u,\mathbf u^*)\|$ the \emph{gap} of $P$ at $\mathbf U$.
 The free norm of $P$ does not depend on $i$, $j$, $z$ or $\sigma$ (\Cref{lem:phase}), and
 \begin{equation}\label{eq:freebound}
-  \|P(\mathbf u,\mathbf u^*)\|\ \le\ 2+2t^{4/3}
+  \|P(\mathbf u,\mathbf u^*)\|\ \le\ 2+3\cdot 4^{-1/3}\,t^{4/3}
 \end{equation}
 (\Cref{lem:free}). The exact value is given by the formula of Akemann and Ostrand \cite{AO} for weighted sums of
 free generators, in the form stated by Bordenave and Lacoin \cite[(62)]{BL}; \Cref{lem:free} proves the upper
@@ -120,7 +123,10 @@ $v\in H_N$, $Cv=zv$, at which the other, $D$, satisfies
 \[
   \langle v,P(\mathbf U,\mathbf U^*)v\rangle=2+2t\,|\operatorname{Re}\langle v,Dv\rangle|\ \ge\ 2+\frac{2t}n ,
 \]
-and $2t/n>2t^{4/3}$ when $t<n^{-3}$. The gap is then positive for every $N\ge 2$. In the theorem of Alev and Rao the norm on $H_N$ is
+The first bound is linear in $t$ and the bound \eqref{eq:freebound} is of order $t^{4/3}$. For $t=1/(2n^3)$ they
+are $2+1/n^4$ and $2+3/(4n^4)$, so the largest eigenvalue of $P(\mathbf U,\mathbf U^*)$ on $H_N$, and hence its
+norm there, exceeds the free norm of $P$ by at least $1/(4n^4)$. This value of $t$ tends to zero as $N\to\infty$.
+In the theorem of Alev and Rao the norm on $H_N$ is
 bounded below by the free norm minus an error term, for a fixed polynomial with nonnegative coefficients. Here it
 is bounded below by the free norm plus $1/(4n^4)$, for a polynomial that depends on the tuple and whose
 coefficients $\bar z$, $z$ and $\sigma t$ need not be nonnegative. In the theorem of O'Donnell and Wu one tuple satisfies \eqref{eq:vh} up to the error $\varepsilon$ for all
@@ -132,50 +138,53 @@ Let $N\ge 2$, $r\ge 2$ and $n=N-1$, and let $\mathbf U=(U_1,\dots,U_r)$ be $N\ti
 There are indices $i\ne j$, a complex number $z$ with $|z|=1$ and a sign $\sigma\in\{1,-1\}$ such that the
 polynomial \eqref{eq:P} with $t=1/(2n^3)$ satisfies
 \[
-  \bigl\|P(\mathbf U,\mathbf U^*)|_{H_N}\bigr\|\ \ge\ 2+\frac1{n^4}\ \ge\ \|P(\mathbf u,\mathbf u^*)\|+\frac1{4n^4}.
+  \lambda_{\max}\bigl(P(\mathbf U,\mathbf U^*)|_{H_N}\bigr)\ \ge\ 2+\frac1{n^4}\ \ge\ \|P(\mathbf u,\mathbf u^*)\|+\frac1{4n^4},
 \]
-In particular, for $r\ge 2$ and $N\ge 2$ no $r$-tuple of $N\times N$ permutation matrices satisfies \eqref{eq:vh}
+where $\lambda_{\max}$ denotes the largest eigenvalue; the same lower bound holds for
+$\|P(\mathbf U,\mathbf U^*)|_{H_N}\|$. In particular, for $r\ge 2$ and $N\ge 2$ no $r$-tuple of $N\times N$ permutation matrices satisfies \eqref{eq:vh}
 for all polynomials of degree at most one.
 \end{theorem}
 
 The polynomial depends on $\mathbf U$, as the question allows. The number $z$ is an eigenvalue of a permutation
-matrix, hence a root of unity of order at most $N$, and this gives a set that does not depend on $\mathbf U$.
+matrix, hence a root of unity of order at most $N$, so $P$ can be taken from a set that depends only on $N$.
 
 \begin{corollary}\label{cor:family}
 Let $N\ge 2$, $r\ge 2$ and $n=N-1$, and let $\mathcal P_N$ be the set of polynomials \eqref{eq:P} with $t=1/(2n^3)$,
 $(i,j)\in\{(1,2),(2,1)\}$, $\sigma\in\{1,-1\}$ and $z^k=1$ for some $1\le k\le N$. Then $|\mathcal P_N|\le 2N(N+1)$,
 and for every $r$-tuple $\mathbf U$ of $N\times N$ permutation matrices some $P\in\mathcal P_N$ satisfies
+$\lambda_{\max}(P(\mathbf U,\mathbf U^*)|_{H_N})\ge\|P(\mathbf u,\mathbf u^*)\|+1/(4n^4)$, and hence
 $\|P(\mathbf U,\mathbf U^*)|_{H_N}\|\ge\|P(\mathbf u,\mathbf u^*)\|+1/(4n^4)$.
 \end{corollary}
 
 \begin{remark}\label{rem:scope}
 \begin{enumerate}[label=(\alph*)]
-\item The lower bound $1/(4n^4)$ for the gap tends to zero, so \Cref{thm:main} is consistent with strong convergence and with the
-constructions of \cite{OW}. For $t=1/(2n^3)$ the coefficients of \eqref{eq:P} have $\ell^1$ norm $2+2t\le 3$, so
-after normalization the gap is at least $1/(12n^4)$.
+\item The lower bound $1/(4n^4)$ tends to zero as $N\to\infty$, so \Cref{thm:main} does not contradict strong
+convergence or the theorem of \cite{OW}. For $t=1/(2n^3)$ the coefficients of \eqref{eq:P} have $\ell^1$ norm
+$2+2t\le 3$, so the gap of $P$ divided by the $\ell^1$ norm of its coefficients is at least $1/(12n^4)$.
 \item For $r=1$ let $u$ be the shift on $\ell^2(\mathbb Z)$. For every Laurent polynomial $P$ and every unitary
 matrix $U$ the spectrum of $U$ lies on the unit circle, so $\|P(U,U^*)\|=\max_{\zeta\in\operatorname{spec}U}|P(\zeta,\bar\zeta)|
 \le\max_{|\zeta|=1}|P(\zeta,\bar\zeta)|=\|P(u,u^*)\|$, the last equality by the Fourier transform on $\ell^2(\mathbb Z)$.
-In particular \eqref{eq:vh} holds for every permutation matrix, since its norm on $H_N$ is at most its norm. So two
+In particular \eqref{eq:vh} holds for every permutation matrix $U$, since
+$\|P(U,U^*)|_{H_N}\|\le\|P(U,U^*)\|$. So two
 generators are needed.
 \item In \Cref{thm:main} the polynomial is chosen after the tuple; the weaker question, in which the tuple is chosen
-after the polynomial, is not settled by it. The theorems of \cite{MO} and \cite{HPS} are positive results of this
-weaker kind for adjacency matrices of graphs, whose coefficients are nonnegative, and for the largest eigenvalue
-on the complement of the old eigenvectors rather than for the norm.
+after the polynomial, is not settled by it. The theorems of \cite{HPS} and \cite{MO} are positive results of this
+weaker kind for adjacency matrices of graphs, whose entries are nonnegative, and for the largest new eigenvalue. In
+both the lift is chosen after the graph. The lower bound of \Cref{thm:main} is likewise a bound for the largest
+eigenvalue on $H_N$.
 \end{enumerate}
 \end{remark}
 
 
-\section{The free side}\label{sec:free}
+\section{An upper bound for the free norm}\label{sec:free}
 
 Let $a,b$ be free generators of $\mathbf F_2$
 and, for $t>0$,
 \[
   T_t=\lambda(a)+\lambda(a)^*+t\bigl(\lambda(b)+\lambda(b)^*\bigr),
 \]
-which for $r=2$ is $P(\mathbf u,\mathbf u^*)$ with $i=1$, $j=2$, $z=1$ and $\sigma=1$. The exact value of $\|T_t\|$
-is given by the formula of Akemann and Ostrand \cite{AO}, in the form of \cite[(62)]{BL}; only the upper bound
-below is used, and it has the following direct proof.
+which for $r=2$ is $P(\mathbf u,\mathbf u^*)$ with $i=1$, $j=2$, $z=1$ and $\sigma=1$. Only the upper bound of
+the following lemma is used; the exact value of $\|T_t\|$ is given by the formula cited in the introduction.
 
 \begin{lemma}\label{lem:free}
 For all $s,t>0$,
@@ -213,7 +222,7 @@ Since $T_t$ is bounded and self-adjoint and finitely supported vectors are dense
 inequality of the lemma follows from $\sqrt{s^2+4}\le 2+s^2/4$ and $\sqrt{s^2+4t^2}\le s+2t^2/s$.
 \end{proof}
 
-With $s=(4t^2)^{1/3}$ the last bound of \Cref{lem:free} is $2+3\cdot 4^{-1/3}t^{4/3}\le 2+2t^{4/3}$, which with
+With $s=(4t^2)^{1/3}$ the last bound of \Cref{lem:free} is $2+3\cdot 4^{-1/3}t^{4/3}$, which with
 \Cref{lem:phase} gives \eqref{eq:freebound}. For $t=1/(2n^3)$ this choice is $s=1/n^2$, the value used in the proof of \Cref{thm:main}.
 
 \begin{lemma}\label{lem:phase}
@@ -223,7 +232,7 @@ $\|P(\mathbf u,\mathbf u^*)\|=\|T_t\|$.
 
 \begin{proof}
 There is a homomorphism $\chi$ from $\mathbf F_r$ to the unit circle with $\chi(g_i)=z$, $\chi(g_j)=\sigma$ and
-$\chi(g_k)=1$ otherwise. The diagonal unitary $(M\xi)(w)=\chi(w)\xi(w)$ on $\ell^2(\mathbf F_r)$ satisfies
+$\chi(g_l)=1$ for $l\notin\{i,j\}$. The diagonal unitary $(M\xi)(w)=\chi(w)\xi(w)$ on $\ell^2(\mathbf F_r)$ satisfies
 $(M\lambda(g)M^*\xi)(w)=\chi(w)\chi(g^{-1}w)^{-1}\xi(g^{-1}w)=\chi(g)(\lambda(g)\xi)(w)$, that is,
 $M\lambda(g)M^*=\chi(g)\lambda(g)$, and hence $M\lambda(g)^*M^*=\chi(g)^{-1}\lambda(g)^*$. So $M$ conjugates $\bar z u_i+zu_i^*+\sigma t(u_j+u_j^*)$ to $u_i+u_i^*+t(u_j+u_j^*)$. The subgroup
 $K$ generated by $g_i,g_j$ is free on these two generators, and $\ell^2(\mathbf F_r)$ is the orthogonal direct sum of
@@ -232,7 +241,7 @@ $\lambda(g_j)$, and on it these two operators are unitarily equivalent to the le
 $\mathbf F_2$, with $g_i,g_j$ in place of $a,b$. Hence the norm equals $\|T_t\|$.
 \end{proof}
 
-\section{The finite side}\label{sec:finite}
+\section{A lower bound on $H_N$}\label{sec:finite}
 
 A permutation matrix $U$ permutes the basis vectors $\delta_x$ of $\mathbb C^N$; a fixed point or a cycle of $U$
 is a fixed point or a cycle of this permutation.
@@ -273,8 +282,8 @@ Choose $\sigma$ with $\sigma\operatorname{Re}\langle v,Dv\rangle>0$. Since $C$ i
   \langle v,P(\mathbf U,\mathbf U^*)v\rangle=\bar z z+z\bar z+2\sigma t\operatorname{Re}\langle v,Dv\rangle
   \ \ge\ 2+\frac{2t}n=2+\frac1{n^4}.
 \]
-The operator $P(\mathbf U,\mathbf U^*)$ is self-adjoint and preserves $H_N$, so its norm there is at least this
-Rayleigh quotient. By \Cref{lem:phase} and \Cref{lem:free} with $s=1/n^2$,
+The operator $P(\mathbf U,\mathbf U^*)$ is self-adjoint and preserves $H_N$, so its largest eigenvalue there,
+and hence its norm there, is at least this Rayleigh quotient. By \Cref{lem:phase} and \Cref{lem:free} with $s=1/n^2$,
 \[
   \|P(\mathbf u,\mathbf u^*)\|=\|T_t\|\le 2+\frac1{4n^4}+\frac{2t^2}{s}=2+\frac1{4n^4}+\frac1{2n^4}
   =2+\frac3{4n^4},
