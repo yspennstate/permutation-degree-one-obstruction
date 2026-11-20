@@ -32,7 +32,7 @@ space orthogonal to the constant vector every noncommutative polynomial of degre
 free norm, where $q(N)\to\infty$. The free norm is the norm in the left regular representation of the free group.
 Such a
 property would extend the Ramanujan property of regular graphs to all polynomials. We show that it fails already for
-polynomials of degree one: for every $N\ge 2$, every $r\ge 2$ and every $r$-tuple of $N\times N$ permutation
+polynomials of degree one. For every $N\ge 2$, every $r\ge 2$ and every $r$-tuple of $N\times N$ permutation
 matrices there is a self-adjoint polynomial of degree one, with complex coefficients, whose largest eigenvalue on
 that space, and hence its norm there, exceeds its free norm by at least $1/(4(N-1)^4)$. The polynomial can be taken
 from an explicit set of at most $2N(N+1)$ polynomials that depends only on $N$.
@@ -65,7 +65,7 @@ theorem \cite{Fr} for this model of random $2r$-regular graphs: the norm of the 
 $2\sqrt{2r-1}$ in probability.
 
 A $d$-regular graph on $N$ vertices whose adjacency matrix has norm at most $2\sqrt{d-1}$ on $H_N$ is a Ramanujan
-graph; for infinitely many degrees there are such graphs with $N$ arbitrarily large, by the constructions of Lubotzky, Phillips and Sarnak
+graph. For infinitely many degrees there are such graphs with $N$ arbitrarily large, by the constructions of Lubotzky, Phillips and Sarnak
 \cite{LPS} and of Margulis \cite{Ma}. A bipartite $d$-regular graph has the eigenvalue $-d$ on $H_N$; the bipartite
 Ramanujan graphs of every degree of Marcus, Spielman and Srivastava \cite{MSS} satisfy the bound $2\sqrt{d-1}$ for
 the remaining eigenvalues. Hall, Puder and Sawin \cite{HPS} prove that every connected finite graph without loops
@@ -114,18 +114,20 @@ The free norm of $P$ does not depend on $i$, $j$, $z$ or $\sigma$ (\Cref{lem:pha
 \end{equation}
 (\Cref{lem:free}). The exact value is given by the formula of Akemann and Ostrand \cite{AO} for weighted sums of
 free generators, in the form stated by Bordenave and Lacoin \cite[(62)]{BL}; \Cref{lem:free} proves the upper
-bound by a weighted Schur test. For any two $N\times N$ permutation matrices, one of them, $C$, has a unit eigenvector
+bound. For any two $N\times N$ permutation matrices, one of them, $C$, has a unit eigenvector
 $v\in H_N$, $Cv=zv$, at which the other, $D$, satisfies
 \[
   |\operatorname{Re}\langle v,Dv\rangle|\ \ge\ \frac1n
 \]
 (\Cref{lem:finite}). With $U_i=C$, $U_j=D$ and $\sigma$ the sign of $\operatorname{Re}\langle v,Dv\rangle$,
 \[
-  \langle v,P(\mathbf U,\mathbf U^*)v\rangle=2+2t\,|\operatorname{Re}\langle v,Dv\rangle|\ \ge\ 2+\frac{2t}n ,
+  \langle v,P(\mathbf U,\mathbf U^*)v\rangle=2+2t\,|\operatorname{Re}\langle v,Dv\rangle|\ \ge\ 2+\frac{2t}n .
 \]
-The first bound is linear in $t$ and the bound \eqref{eq:freebound} is of order $t^{4/3}$. For $t=1/(2n^3)$ they
+This lower bound is linear in $t$, and the upper bound \eqref{eq:freebound} is of order $t^{4/3}$. For
+$t=1/(2n^3)$ they
 are $2+1/n^4$ and $2+3/(4n^4)$, so the largest eigenvalue of $P(\mathbf U,\mathbf U^*)$ on $H_N$, and hence its
 norm there, exceeds the free norm of $P$ by at least $1/(4n^4)$. This value of $t$ tends to zero as $N\to\infty$.
+
 In the theorem of Alev and Rao the norm on $H_N$ is
 bounded below by the free norm minus an error term, for a fixed polynomial with nonnegative coefficients. Here it
 is bounded below by the free norm plus $1/(4n^4)$, for a polynomial that depends on the tuple and whose
@@ -160,9 +162,12 @@ $\|P(\mathbf U,\mathbf U^*)|_{H_N}\|\ge\|P(\mathbf u,\mathbf u^*)\|+1/(4n^4)$.
 \begin{enumerate}[label=(\alph*)]
 \item The lower bound $1/(4n^4)$ tends to zero as $N\to\infty$, so \Cref{thm:main} does not contradict strong
 convergence or the theorem of \cite{OW}. For $t=1/(2n^3)$ the coefficients of \eqref{eq:P} have $\ell^1$ norm
-$2+2t\le 3$, so the gap of $P$ divided by the $\ell^1$ norm of its coefficients is at least $1/(12n^4)$.
-\item For $r=1$ let $u$ be the shift on $\ell^2(\mathbb Z)$. For every Laurent polynomial $P$ and every unitary
-matrix $U$ the spectrum of $U$ lies on the unit circle, so $\|P(U,U^*)\|=\max_{\zeta\in\operatorname{spec}U}|P(\zeta,\bar\zeta)|
+$2+2t\le 3$, so the gap of $P$ divided by the $\ell^1$ norm of its coefficients is at least $1/(12n^4)$. For a fixed $t>0$
+the lower bound $2+2t/n$ exceeds the bound \eqref{eq:freebound} only when $n^3<32/(27t)$, so for a fixed
+polynomial \eqref{eq:P} the two bounds give a positive gap for finitely many $N$ only.
+\item For $r=1$ let $u$ be the shift on $\ell^2(\mathbb Z)$. For every polynomial $P$ in $x_1,x_1^*$ and every unitary
+matrix $U$, the matrix $P(U,U^*)$ is normal with eigenvalues $P(\zeta,\bar\zeta)$, $\zeta\in\operatorname{spec}U$,
+and $\operatorname{spec}U$ lies on the unit circle. Hence $\|P(U,U^*)\|=\max_{\zeta\in\operatorname{spec}U}|P(\zeta,\bar\zeta)|
 \le\max_{|\zeta|=1}|P(\zeta,\bar\zeta)|=\|P(u,u^*)\|$, the last equality by the Fourier transform on $\ell^2(\mathbb Z)$.
 In particular \eqref{eq:vh} holds for every permutation matrix $U$, since
 $\|P(U,U^*)|_{H_N}\|\le\|P(U,U^*)\|$. So two
@@ -183,8 +188,7 @@ and, for $t>0$,
 \[
   T_t=\lambda(a)+\lambda(a)^*+t\bigl(\lambda(b)+\lambda(b)^*\bigr),
 \]
-which for $r=2$ is $P(\mathbf u,\mathbf u^*)$ with $i=1$, $j=2$, $z=1$ and $\sigma=1$. Only the upper bound of
-the following lemma is used; the exact value of $\|T_t\|$ is given by the formula cited in the introduction.
+which for $r=2$ is $P(\mathbf u,\mathbf u^*)$ with $i=1$, $j=2$, $z=1$ and $\sigma=1$. 
 
 \begin{lemma}\label{lem:free}
 For all $s,t>0$,
